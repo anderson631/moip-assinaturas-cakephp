@@ -132,7 +132,7 @@ class SubscriptionsComponent extends MoipComponent {
  * @return array
  **/
 	public function suspend($code) {
-		$response = $this->HttpSocket->put($this->baseUri . 'subscriptions/' . $code . '/suspend');
+		$response = $this->HttpSocket->put($this->baseUri . 'subscriptions/' . $code . '/suspend', null, $this->request);
 		$body = json_decode($response->body, true);
 
 		switch ($response->code) {
@@ -156,7 +156,7 @@ class SubscriptionsComponent extends MoipComponent {
  * @return array
  **/
 	public function activate($code) {
-		$response = $this->HttpSocket->put($this->baseUri . 'subscriptions/' . $code . '/activate');
+		$response = $this->HttpSocket->put($this->baseUri . 'subscriptions/' . $code . '/activate', null, $this->request);
 		$body = json_decode($response->body, true);
 
 		switch ($response->code) {
@@ -180,7 +180,7 @@ class SubscriptionsComponent extends MoipComponent {
  * @return array
  **/
 	public function cancel($code) {
-		$response = $this->HttpSocket->put($this->baseUri . 'subscriptions/' . $code . '/cancel');
+		$response = $this->HttpSocket->put($this->baseUri . 'subscriptions/' . $code . '/cancel', null, $this->request);
 		$body = json_decode($response->body, true);
 
 		switch ($response->code) {
